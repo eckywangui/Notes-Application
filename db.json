@@ -1,5 +1,14 @@
-{"notes":
-[
-
-]
-}
+{
+    "data": [
+      {
+        "title": "Quote 1",
+        "text": "Hey you, smile today!",
+        "image": "https://cache.lovethispic.com/uploaded_images/221963-Don-t-Forget-To-Smile.jpg"
+      },
+      {
+        "title": "Quote 2",
+        "text": "Just take a moment and breath!.",
+        "image": "breath.jpeg"
+      }
+    ]
+  }

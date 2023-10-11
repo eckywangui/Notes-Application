@@ -11,25 +11,47 @@ function addNote() {
 
     if (noteTitle === "" || noteText === "") return;
 
-    const noteItem = document.createElement("div");
-    noteItem.className = "note";
+    // Fetch data from the db.json file directly
+    fetch("http://localhost:3000/data") // Assuming db.json is in the same directory as your HTML file
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (data && data.length > 0) {
+                const randomIndex = Math.floor(Math.random() * data.length);
+                const randomQuote = data[randomIndex];
 
-    const date = new Date();
-    const formattedDate = date.toLocaleString();
+                const noteItem = document.createElement("div");
+                noteItem.className = "note";
 
-    noteItem.innerHTML = `
-        <h3 class="note-title">${noteTitle}</h3>
-        <p class="note-text">${noteText}</p>
-        <p class="note-date">${formattedDate}</p>
-        <button class="edit" onclick="editNote(this)">Edit</button>
-        <button class="delete" onclick="deleteNote(this)">Delete</button>
-        <button class="save" onclick="saveNote(this)">Save</button>
-    `;
+                const date = new Date();
+                const formattedDate = date.toLocaleString();
 
-    notesList.appendChild(noteItem);
+                noteItem.innerHTML = `
+                    <h3 class="note-title">${noteTitle}</h3>
+                    <p class="note-text">${noteText}</p>
+                    <p class="note-date">${formattedDate}</p>
+                    <p class="quote-text">${randomQuote.text}</p>
+                    <img class="quote-image" src="${randomQuote.image}" alt="Image">
+                    <button class="edit" onclick="editNote(this)">Edit</button>
+                    <button class="delete" onclick="deleteNote(this)">Delete</button>
+                    <button class="save" onclick="saveNote(this)">Save</button>
+                `;
 
-    noteTitleInput.value = "";
-    noteInput.value = "";
+                notesList.appendChild(noteItem);
+
+                noteTitleInput.value = "";
+                noteInput.value = "";
+            } else {
+                console.error("Data is empty or not in the expected format.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error fetching data:", error);
+        });
 }
 
 function editNote(button) {
@@ -37,12 +59,13 @@ function editNote(button) {
     const noteText = noteItem.querySelector(".note-text");
     const noteTitle = noteItem.querySelector(".note-title");
     const saveButton = noteItem.querySelector(".save");
+    const editButton = button;
     
     noteText.contentEditable = true;
     noteText.focus();
     noteTitle.contentEditable = true;
     noteTitle.focus();
-    button.style.display = "none";
+    editButton.style.display = "none";
     saveButton.style.display = "inline";
 }
 
@@ -50,11 +73,12 @@ function saveNote(button) {
     const noteItem = button.parentElement;
     const noteText = noteItem.querySelector(".note-text");
     const noteTitle = noteItem.querySelector(".note-title");
+    const saveButton = button;
     const editButton = noteItem.querySelector(".edit");
     
     noteText.contentEditable = false;
     noteTitle.contentEditable = false;
-    button.style.display = "none";
+    saveButton.style.display = "none";
     editButton.style.display = "inline";
 }
 

@@ -1,28 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(241, 211, 242);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
 }
 
 .container {
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: rgb(239, 139, 220);
+    border-radius: 0px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 950px;
+    
 }
 
 .header {
-    background-color: #02b3e4;
-    color: #fff;
+    background-color: rgb(239, 139, 220);
+    color: black;
     text-align: center;
-    padding: 10px;
+    padding: 10px;  
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    font-style: italic;
+
 }
 
 .input-area {
@@ -42,7 +45,7 @@ input[type="text"] {
 }
 
 #add-button {
-    background-color: #02b3e4;
+    background-color: rgb(96, 17, 88);
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -51,7 +54,7 @@ input[type="text"] {
 }
 
 #add-button:hover {
-    background-color: #0091c2;
+    background-color: rgb(20, 10, 1)
 }
 
 .notes {
@@ -69,32 +72,45 @@ input[type="text"] {
 }
 
 .note-title {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
+    font-style: italic;
     margin-bottom: 5px;
+  
 }
 
 .note-text {
     font-size: 16px;
     margin-bottom: 10px;
+    font-style: italic;
 }
 
 .note-date {
     font-size: 12px;
     color: #777;
+    font-style: italic;
 }
 
 .edit, .delete, .save {
-    background-color: #ff3b3b;
-    color: #fff;
+    color: black;
     border: none;
     padding: 4px 8px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: 550px;
+    margin-left: 0px;
+    margin-bottom: 5px;
     display: inline;
+    font-style: italic;
 }
 
 .edit:hover, .delete:hover, .save:hover {
-    background-color: #e62323;
+    background-color: rgb(96, 17, 88);
+}
+
+.quote-image {
+    max-width: 40%; 
+    height:auto;   
+    border: 10px solid rgb(239, 139, 220);
+    margin-top: 10px; 
 }
