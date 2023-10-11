@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9a93af;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#notes-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#notes-list, #note-details {
+    flex: 1;
+    padding: 10px;
+}
+
+#notes {
+    list-style-type: none;
+    padding: 0;
+}
+
+#notes li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+#add-button {
+    display: block;
+    margin: 10px auto;
+}
+
