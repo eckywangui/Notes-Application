@@ -28,13 +28,13 @@ The Notes App is a straightforward web application that allows users to create a
 
 ## Demo
 
-You can try out the live demo of the Notes App [here](#).
+You can try out the live demo of the Notes App [here](http://127.0.0.1:5500/).
 
 ## Installation
 
 1. Clone the repository to your local machine:
 
-   - git clone https://github.com/your-username/notes-app.git
+   - git clone git@github.com:eckywangui/Notes-Application.git
    - cd into notes-app
 2. Open index.html
 
