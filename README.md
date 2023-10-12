@@ -37,9 +37,9 @@ You can try out the live demo of the Notes App [here](http://127.0.0.1:5500/).
    - git clone git@github.com:eckywangui/Notes-Application.git
    - cd into notes-app
    - run code . to open vs code.
-2. Open the db.json file and run json-server --watch db.json
+2. Open the db.json file and run json-server --watch db.json on terminal
  
-3. Open index.html to view the application
+3. Open index.html in your terminal to view the application, or run the live server from your vs code.
 
 ### Usage
   - Enter a title and content for your note.
