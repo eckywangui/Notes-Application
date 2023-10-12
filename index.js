@@ -11,7 +11,7 @@ function addNote() {
 
     if (noteTitle === "" || noteText === "") return;
 
-    // Fetch data from the db.json file directly
+   
     fetch("https://note-application-26gk.onrender.com/data") 
         .then((response) => {
             if (!response.ok) {
