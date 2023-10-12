@@ -63,7 +63,7 @@ input[type="text"] {
 
 .note {
     background-color: 239, 139, 220;
-    border: 1px solid #ccc;
+    border: 5px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
