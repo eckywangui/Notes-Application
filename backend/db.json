@@ -1,0 +1,21 @@
+{
+    "data": [
+      {
+        "title": "Quote 1",
+        "text": "Hey you, smile today!",
+        "image": "https://cache.lovethispic.com/uploaded_images/221963-Don-t-Forget-To-Smile.jpg"
+      },
+      {
+        "title": "Quote 2",
+        "text": "Just take a moment and breath!.",
+        "image": "breath.jpeg"
+      },
+
+      {
+        "title": "Quote 3",
+        "text": "It is  good day!.",
+        "image": "https://www.benfrancia.com/wp-content/uploads/2013/11/1392971_548465058568011_902176206_n.jpg"
+      }
+    ]
+
+  }

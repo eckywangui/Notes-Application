@@ -1,21 +1,19 @@
 {
-    "data": [
-      {
-        "title": "Quote 1",
-        "text": "Hey you, smile today!",
-        "image": "https://cache.lovethispic.com/uploaded_images/221963-Don-t-Forget-To-Smile.jpg"
-      },
-      {
-        "title": "Quote 2",
-        "text": "Just take a moment and breath!.",
-        "image": "breath.jpeg"
-      },
-
-      {
-        "title": "Quote 3",
-        "text": "It is  good day!.",
-        "image": "https://www.benfrancia.com/wp-content/uploads/2013/11/1392971_548465058568011_902176206_n.jpg"
-      }
-    ]
-
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}
