@@ -12,7 +12,7 @@ function addNote() {
     if (noteTitle === "" || noteText === "") return;
 
     // Fetch data from the db.json file directly
-    fetch("http://localhost:3000/data") // Assuming db.json is in the same directory as your HTML file
+    fetch("http://localhost:3000/data") 
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
