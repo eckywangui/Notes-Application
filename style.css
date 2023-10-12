@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(241, 211, 242);
@@ -6,26 +7,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .container {
     background-color: rgb(239, 139, 220);
     border-radius: 0px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 950px;
-    
+    width: 100%; 
+    max-width: 950px; 
+    padding: 10px; 
 }
 
 .header {
     background-color: rgb(149, 20, 125);
     color: black;
     text-align: center;
-    padding: 10px;  
+    padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-style: italic;
-
 }
 
 .input-area {
@@ -54,7 +54,7 @@ input[type="text"] {
 }
 
 #add-button:hover {
-    background-color: rgb(20, 10, 1)
+    background-color: rgb(20, 10, 1);
 }
 
 .notes {
@@ -76,7 +76,6 @@ input[type="text"] {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 5px;
-  
 }
 
 .note-text {
@@ -97,10 +96,8 @@ input[type="text"] {
     padding: 4px 8px;
     border-radius: 15px;
     cursor: pointer;
-    margin-right: 550px;
-    margin-left: 0px;
+    margin-right: 10px; 
     margin-bottom: 5px;
-    display: inline;
     font-style: italic;
 }
 
@@ -109,9 +106,19 @@ input[type="text"] {
 }
 
 .quote-image {
-    max-width: 40%; 
-    height:auto;   
+    max-width: 100%; 
+    height: auto;
     border: 10px solid rgb(239, 139, 220);
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
+
+@media (max-width: 375px) {
+    .container {
+        padding: 0; 
+    }
+
+    .note {
+        padding: 10px;
+    }
+}
