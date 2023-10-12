@@ -106,8 +106,8 @@ input[type="text"] {
 }
 
 .quote-image {
-    max-width: 100%; 
-    height: auto;
+    max-width: 50%; 
+    height: 50%;
     border: 10px solid rgb(239, 139, 220);
     margin-top: 10px;
 }
