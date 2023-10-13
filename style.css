@@ -15,6 +15,21 @@ body {
     width: 100%;
     max-width: 950px;
     padding: 10px;
+    display: flex;       
+    flex-direction: column; 
+    justify-content: space-between; 
+    min-height: 100vh; 
+}
+
+footer {
+    background-color: rgb(149, 20, 125);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .header {
@@ -109,19 +124,6 @@ input[type="text"] {
     height: 50%;
     border: 10px solid rgb(239, 139, 220);
     margin-top: 10px;
-}
-
-
-
-footer {
-    background-color: rgb(149, 20, 125);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 
