@@ -1,4 +1,4 @@
-# Notes App
+# NOTES APP
 
 A simple web-based notes app built with HTML, CSS, and JavaScript.
 
