@@ -119,12 +119,20 @@ input[type="text"] {
     background-color: rgb(96, 17, 88);
 }
 
+.quote-section {
+    text-align: center;
+}
+
 .quote-image {
     max-width: 50%;
-    height: 50%;
-    border: 10px solid rgb(239, 139, 220);
+    height: 20%;
+    border: 10px solid rgb(218, 205, 216);
     margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 7%;
 }
+
+
 
 
 
