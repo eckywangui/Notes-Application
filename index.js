@@ -3,6 +3,9 @@ const noteInput = document.getElementById("note-input");
 const addBtn = document.getElementById("add-button");
 const notesList = document.getElementById("notes-list");
 
+// Load notes from localStorage on startup
+loadNotesFromLocalStorage();
+
 addBtn.addEventListener("click", addNote);
 
 function addNote() {
@@ -11,8 +14,7 @@ function addNote() {
 
     if (noteTitle === "" || noteText === "") return;
 
-   
-    fetch("https://note-application-26gk.onrender.com/data") 
+    fetch("https://note-application-26gk.onrender.com/data")
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
@@ -43,6 +45,9 @@ function addNote() {
 
                 notesList.appendChild(noteItem);
 
+              
+                saveNoteToLocalStorage(noteTitle, noteText);
+
                 noteTitleInput.value = "";
                 noteInput.value = "";
             } else {
@@ -60,7 +65,7 @@ function editNote(button) {
     const noteTitle = noteItem.querySelector(".note-title");
     const saveButton = noteItem.querySelector(".save");
     const editButton = button;
-    
+
     noteText.contentEditable = true;
     noteText.focus();
     noteTitle.contentEditable = true;
@@ -75,14 +80,73 @@ function saveNote(button) {
     const noteTitle = noteItem.querySelector(".note-title");
     const saveButton = button;
     const editButton = noteItem.querySelector(".edit");
-    
+
     noteText.contentEditable = false;
     noteTitle.contentEditable = false;
     saveButton.style.display = "none";
     editButton.style.display = "inline";
+
+    // Save the changes to local storage
+    saveNoteToLocalStorage(noteTitle.innerText, noteText.innerText);
 }
 
 function deleteNote(button) {
     const noteItem = button.parentElement;
     notesList.removeChild(noteItem);
+
+    // Remove the note from local storage
+    deleteNoteFromLocalStorage(noteItem.querySelector(".note-title").innerText);
+}
+
+function saveNoteToLocalStorage(title, text) {
+    // Load existing notes from localStorage
+    const existingNotes = JSON.parse(localStorage.getItem("notes")) || [];
+
+
+    const updatedNotes = existingNotes.map((note) => {
+        if (note.title === title) {
+            return { title, text };
+        }
+        return note;
+    });
+
+    // Save the updated notes array to localStorage
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+}
+
+function deleteNoteFromLocalStorage(title) {
+   
+    const existingNotes = JSON.parse(localStorage.getItem("notes")) || [];
+
+   
+    const updatedNotes = existingNotes.filter((note) => note.title !== title);
+
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+}
+
+function loadNotesFromLocalStorage() {
+   
+    const savedNotes = JSON.parse(localStorage.getItem("notes"));
+
+    if (savedNotes) {
+        savedNotes.forEach((note) => {
+            const { title, text } = note;
+            const noteItem = document.createElement("div");
+            noteItem.className = "note";
+
+            const date = new Date();
+            const formattedDate = date.toLocaleString();
+
+            noteItem.innerHTML = `
+                <h3 class="note-title">${title}</h3>
+                <p class="note-text">${text}</p>
+                <p class="note-date">${formattedDate}</p>
+                <button class="edit" onclick="editNote(this)">Edit</button>
+                <button class="delete" onclick="deleteNote(this)">Delete</button>
+                <button class="save" onclick="saveNote(this)">Save</button>
+            `;
+
+            notesList.appendChild(noteItem);
+        });
+    }
 }
