@@ -106,10 +106,20 @@ function deleteNote(noteItem, title) {
         console.log("Delete button clicked for: " + title);
 
         noteItem.remove();
+        deleteNoteFromLocalStorage(title);
         
         alert('Your note has been deleted!');
     }
-   
+
+    function deleteNoteFromLocalStorage(title) {
+        // Load existing notes from local storage
+        const existingNotes = JSON.parse(localStorage.getItem('notes')) || [];
+        const updatedNotes = existingNotes.filter((note) => note.title !== title);
+    
+
+        localStorage.setItem('notes', JSON.stringify(updatedNotes));
+    }
+    
 }
 
 function saveNote(noteItem, title, text) {
