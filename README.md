@@ -2,17 +2,6 @@
 
 A simple web-based notes app built with HTML, CSS, and JavaScript.
 
-## Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
 
 ## Description
 
