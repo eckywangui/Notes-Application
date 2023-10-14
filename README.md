@@ -5,7 +5,7 @@
 
 ## Description
 
-The Notes App is a straightforward web application that allows users to create and manage notes. Users can add, edit, and delete notes, and each note displays a randomly selected quote and an image from the provided database (db.json).
+The Notes App is a straightforward web application that allows users to create and manage notes. Users can add, edit, and delete notes, while it displays a randomly selected quote and an image from the provided database (db.json).
 
 # Installation
 
