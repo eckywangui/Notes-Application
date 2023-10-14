@@ -38,7 +38,7 @@ You can try out the live demo of the Notes App [here](http://127.0.0.1:5500/).
   - The app will display a random quote and image in each note from the provided database.
 
 ### License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Copyright (c) Permission is hereby granted, free of charge, to any person obtaining a copy of this code
 
 ### Contributing
 Contributions are welcome! If you'd like to contribute to this project, please open an issue or a pull request.
