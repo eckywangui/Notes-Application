@@ -24,7 +24,7 @@ You can try out the live demo of the Notes App [here](https://eckywangui.github.
 
 ## Known Bugs
     The application takes long to load from render
-    Otherwise application works perfectly well, no bugs.
+    No other bugs.
 
 ## Technologies used
     - JS
